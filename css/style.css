@@ -257,10 +257,12 @@ strong, b { font-weight: 600; }
 /* ---------- Ticker ---------- */
 .ticker { direction: ltr; overflow: hidden; padding-block: var(--s-4) calc(var(--s-6) + 80px); }
 .ticker-track {
-  display: flex; align-items: center; gap: clamp(20px, 4vw, 48px);
-  width: max-content; direction: ltr;
+  display: flex; width: max-content; direction: ltr;
   font: 800 clamp(2.6rem, 9vw, 6.5rem)/1 var(--f-display); white-space: nowrap;
+  animation: ticker-slide 40s linear infinite;
 }
+.ticker-run { display: flex; flex: none; align-items: center; gap: clamp(20px, 4vw, 48px); padding-inline-end: clamp(20px, 4vw, 48px); }
+@keyframes ticker-slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .ticker-track span { color: var(--c); }
 .ticker-track img { width: clamp(36px, 6vw, 64px); }
 
@@ -310,7 +312,7 @@ a.card-cat:hover { text-decoration: underline; }
 .btn-add:active { transform: translateY(3px); box-shadow: 0 1px 0 #000; }
 .btn-add .i { width: 1em; height: 1em; }
 
-.card-facts { display: none; }
+.card .card-facts { display: none; }
 @media (min-width: 1000px) {
   /* Home grid: featured card on its own full row, then 4 cards */
   .product-grid:has(> .card--feature) { grid-template-columns: repeat(4, 1fr); gap: var(--s-4); }
