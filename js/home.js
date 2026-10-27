@@ -5,7 +5,7 @@
 
   /* ---------- Ticker ---------- */
   const run = D.products.map(p => `<span style="--c:${p.color}">${p.name}</span><img src="assets/img/gummy.webp" alt="" width="700" height="690">`).join('');
-  $('[data-ticker]').innerHTML = run + run;
+  $('[data-ticker]').innerHTML = `<div class="ticker-run">${run}</div>`.repeat(2);
 
   /* ---------- Products grid + filters ---------- */
   const grid = $('[data-product-grid]');
@@ -111,11 +111,6 @@
   gsap.fromTo('.hero-photo', { '--bite': '40px' }, {
     '--bite': '120px', ease: 'none',
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-  });
-
-  gsap.to('.ticker-track', {
-    xPercent: -25, ease: 'none',
-    scrollTrigger: { trigger: '.ticker', start: 'top bottom', end: 'bottom top', scrub: true }
   });
 
   gsap.from('.product-grid .card', {

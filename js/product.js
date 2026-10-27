@@ -28,7 +28,7 @@
     p.photo
       ? { label: 'صورة', html: `<img src="${p.photo}" width="1200" height="1200" alt="${p.name}: يد تسكب الحبّات من العبوة">` }
       : { label: 'صورة العبوة', html: ph('صورة العبوة الحقيقية') },
-    { label: 'الحبّة', html: `<img class="slide-gum" src="assets/img/gummy.webp" width="700" height="690" alt="حبّة جيلي من قريب">` },
+    { label: 'الحبّة', html: `<img class="slide-gum" src="assets/img/gummy.webp" width="700" height="690" alt="حبّة جاميز من قريب">` },
     { label: 'لايف ستايل', html: ph('صورة لايف ستايل') }
   ];
   const ingredientRows = p.ingredientsAr.split('+').map(s => `<tr><th scope="row">${s.trim()}</th><td>[—] ملغ</td></tr>`).join('');
